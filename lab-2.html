@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Printer</title>
+</head>
+<body>
+
+    <h2>Campus Printer</h2>
+
+    <label>Enter number of pages:</label>
+    <input type="number" id="pages" min="1" value="1">
+
+    <br><br>
+
+    <label>Select Printing Type:</label>
+    <select id="type">
+        <option value="2">Black and White - Rs.2</option>
+        <option value="8">Colour - Rs.8</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="calculate()">Calculate Price</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculate() {
+            let pages = document.getElementById("pages").value;
+            let price = document.getElementById("type").value;
+
+            if (pages < 1 || pages == "") {
+                document.getElementById("result").innerHTML =
+                    "Minimum 1 page is required";
+            } else {
+                let total = pages * price;
+
+                document.getElementById("result").innerHTML =
+                    "Total Price: Rs. " + total;
+            }
+        }
+    </script>
+
+</body>
+</html>
